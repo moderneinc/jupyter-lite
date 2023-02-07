@@ -1,0 +1,41 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+    tags-ignore:
+      - '.*'
+
+  workflow_dispatch:
+
+jobs:
+  publish-npm:
+    name: Publish npm
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: npm
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+
+      - name: Install jupyterlite
+        run: pip install -r requirements.txt
+
+      - name: Install node modules
+        run: npm ci
+
+      - name: Build static files
+        run: |
+          npm run build

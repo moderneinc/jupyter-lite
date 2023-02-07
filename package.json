@@ -1,0 +1,12 @@
+{
+  "name": "@moderneinc/jupyter-lite",
+  "description": "Optimized jupyter lite static assets",
+  "version": "0.1.0",
+  "author": "",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "sh ./jupyter.sh",
+    "release": "standard-version",
+    "standard-version": "9.3.1"
+  }
+}
