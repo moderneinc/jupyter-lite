@@ -8,10 +8,10 @@
   "scripts": {
     "build": "sh ./jupyter.sh && npm run tsc",
     "tsc": "tsc moderne-jupyter-notebooks.ts",
-    "release": "standard-version",
-    "standard-version": "9.3.1"
+    "release": "standard-version"
   },
   "devDependencies": {
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "standard-version": "9.5.0"
   }
 }
