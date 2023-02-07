@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "main": "./moderne-jupyter-notebooks.js",
   "scripts": {
-    "build": "sh ./jupyter.sh && tsc",
+    "build": "sh ./jupyter.sh && npm run tsc",
     "tsc": "tsc moderne-jupyter-notebooks.ts",
     "release": "standard-version",
     "standard-version": "9.3.1"
