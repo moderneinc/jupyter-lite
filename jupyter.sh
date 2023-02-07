@@ -9,26 +9,26 @@ rm -rf jupyter-notebooks/.git
 # and the values are a string array of files in the directory
 if [ -d "jupyter-notebooks" ]; then
   echo "Reading jupyter-notebooks directory"
-  touch constants/jupyter-notebooks.ts
-  echo "export const AVAILABLE_JUPYTER_NOTEBOOKS = {" > constants/jupyter-notebooks.ts
+  touch moderne-jupyter-notebooks.ts
+  echo "export const AVAILABLE_JUPYTER_NOTEBOOKS = {" > moderne-jupyter-notebooks.ts
   for dir in jupyter-notebooks/*; do
     if [ -d "$dir" ]; then
-      echo "  \"${dir#jupyter-notebooks/}\": [" >> constants/jupyter-notebooks.ts
+      echo "  \"${dir#jupyter-notebooks/}\": [" >> moderne-jupyter-notebooks.ts
       for file in $dir/*; do
         if [ -f "$file" ]; then
-          echo "    \"${file#$dir/}\"," >> constants/jupyter-notebooks.ts
+          echo "    \"${file#$dir/}\"," >> moderne-jupyter-notebooks.ts
         fi
       done
-      echo "  ]," >> constants/jupyter-notebooks.ts
+      echo "  ]," >> moderne-jupyter-notebooks.ts
     fi
   done
-  echo "}" >> constants/jupyter-notebooks.ts
+  echo "}" >> moderne-jupyter-notebooks.ts
 fi
 
-rm -rf public/jupyter
+rm -rf jupyter
 
 jupyter lite build \
   --contents jupyter-notebooks \
-  --output-dir public/jupyter \
+  --output-dir jupyter \
   --no-sourcemaps \
   --config jupyter-lite.json

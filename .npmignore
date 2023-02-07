@@ -1,0 +1,6 @@
+jupter-notebooks
+node_modules
+.github
+.jupterlite.dot.db
+tsconfig.tsbuildinfo
+moderne-jupyter-notebooks.ts
