@@ -1,2 +1,2 @@
-jupyterlite==0.1.0-beta.18
+jupyterlite==0.1.0
 retrolab==0.3.21
