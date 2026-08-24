@@ -28,3 +28,5 @@ jupyter-notebooks/
 moderne-jupyter-notebooks.ts
 moderne-jupyter-notebooks.js
 jupyter/
+
+.cursor/rules/*.local.mdc
