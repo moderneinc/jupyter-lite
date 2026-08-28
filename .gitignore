@@ -28,3 +28,7 @@ jupyter-notebooks/
 moderne-jupyter-notebooks.ts
 moderne-jupyter-notebooks.js
 jupyter/
+
+# Moderne CLI
+.moderne/*
+!.moderne/context/
